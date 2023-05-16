@@ -44,7 +44,7 @@ function SearchComponent({ onLocationSelect }) {
   };
 
   return (
-    <div style={{ marginRight: "20px", height: "100%" }}>
+    <div style={{ width: "50%", margin: "0 auto", marginTop: "20px" }}>
       <AutoComplete
         style={{ width: "100%" }}
         options={options}

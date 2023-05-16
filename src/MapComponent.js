@@ -15,19 +15,19 @@ function MapComponent({ latitude, longitude }) {
     // Fly animation when props change
     map.flyTo({
       center: [longitude, latitude],
-      zoom: 18,
+      zoom: 16,
       speed: 1.2,
       curve: 1.42,
       easing: (t) => t,
     });
 
     return () => {
-      map.remove(); // Cleanup the map when the component unmounts
+      map.remove();
     };
   }, [latitude, longitude]);
 
   return (
-    <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
+    <div ref={mapContainerRef} style={{ width: "100%", height: "90vh" }} />
   );
 }
 export default MapComponent;
