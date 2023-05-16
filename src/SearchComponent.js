@@ -10,7 +10,7 @@ function SearchComponent({ onLocationSelect }) {
     if (value) {
       try {
         const response = await axios.get(
-          `https://api.bmapsbd.com/search/autocomplete/web?search=${value}`
+          `http://elastic.bmapsbd.com/test/autocomplete/search?q=${value}`
         );
         const results = response.data.places;
         const newOptions = results.map((result) => ({
