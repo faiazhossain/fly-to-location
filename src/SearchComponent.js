@@ -5,12 +5,11 @@ import { useState } from "react";
 function SearchComponent({ onLocationSelect }) {
   // Autocomplete API
   const [options, setOptions] = useState([]);
-  console.log(options);
   const handleChange = async (value) => {
     if (value) {
       try {
         const response = await axios.get(
-          `https://api.bmapsbd.com/search/autocomplete/web?search=${value}`
+          `http://elastic.bmapsbd.com/test/autocomplete/search?q=${value}`
         );
         const results = response.data.places;
         const newOptions = results.map((result) => ({
@@ -40,11 +39,10 @@ function SearchComponent({ onLocationSelect }) {
       const { latitude, longitude } = selectedOption;
       onLocationSelect(latitude, longitude);
     }
-    console.log(selectedOption);
   };
 
   return (
-    <div style={{ marginRight: "20px", height: "100%" }}>
+    <div style={{ width: "50%", margin: "0 auto", marginTop: "20px" }}>
       <AutoComplete
         style={{ width: "100%" }}
         options={options}
