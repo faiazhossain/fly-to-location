@@ -5,7 +5,6 @@ import { useState } from "react";
 function SearchComponent({ onLocationSelect }) {
   // Autocomplete API
   const [options, setOptions] = useState([]);
-  console.log(options);
   const handleChange = async (value) => {
     if (value) {
       try {
@@ -40,7 +39,6 @@ function SearchComponent({ onLocationSelect }) {
       const { latitude, longitude } = selectedOption;
       onLocationSelect(latitude, longitude);
     }
-    console.log(selectedOption);
   };
 
   return (
